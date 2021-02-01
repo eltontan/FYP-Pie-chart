@@ -1,0 +1,129 @@
+/* ----------------------------------------------------
+	WRAPPER
+------------------------------------------------------- */
+
+.wrapper{
+	margin:0 auto;	
+}
+
+section{ float:left; width:100%;}
+
+.column{
+	float:left;
+	padding: 15px;
+}
+.column-4 {
+    width: 33.33333333%;
+  }
+
+  
+/*---------------------------------
+	CSS3 Animated Navigation Menu
+-----------------------------------*/
+
+.animatedNav {
+	/* Add background only if you want full width navigation color bar */
+    background: white none repeat scroll 0 0;
+    height: 52px;
+}
+
+.animatedNav > ul{
+	margin:0 auto;
+	width:710px;
+}
+.animatedNav > ul > li{ 
+	background-color:white;
+	float: left;
+	cursor: pointer;
+	list-style-type: none;
+	padding: 15px 25px;
+	
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	position:relative;
+}
+
+.animatedNav li:hover {
+	background: wheat;
+}
+
+.animatedNav > ul > li > a{
+	font-family: 'Raleway', sans-serif;
+	color:inherit;
+	text-decoration:none;
+	font-size:18px;
+	color:#fff;
+}
+
+.animatedNav li ul{
+	position:absolute;
+	list-style:none;
+	text-align:center;
+	width:250px;
+	left:50%;
+	margin-left:-90px;
+	top:32px;
+	
+	/* This is important for the show/hide CSS animation */
+	max-height:0px;
+	overflow:hidden;
+	
+	-webkit-transition:max-height 0.4s linear;
+	-moz-transition:max-height 0.4s linear;
+	transition:max-height 0.4s linear;
+}
+
+.animatedNav li ul li{
+	background-color:#00c08b;
+}
+
+.animatedNav li ul li a{
+	padding:12px;
+	color:#fff;
+	text-decoration:none;
+	display:block;
+}
+
+.animatedNav li ul li:hover{
+	background-color:#05936c;
+}
+
+.animatedNav li ul li:first-child{
+	border-radius:3px 3px 0 0;
+	margin-top:25px;
+	position:relative;
+}
+
+.animatedNav li ul li:first-child:before{ /* the pointer tip */
+	content:'';
+	position:absolute;
+	width:1px;
+	height:1px;
+	border:5px solid transparent;
+	border-bottom-color:#00c08b;
+	left:50%;
+	top:-10px;
+	margin-left:-5px;
+}
+
+.animatedNav li ul li:last-child{
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+}
+
+.animatedNav li:hover ul{
+	max-height:300px; /* Increase when adding more dropdown items */
+}
+
+
+/*--------------------------------------------
+	CSS3 Animated Navigation Menu - unfull
+----------------------------------------------*/
+
+ .animatedNav.unfull{
+	background:none;	  
+ }
+
+
+
