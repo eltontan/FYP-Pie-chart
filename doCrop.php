@@ -11,11 +11,15 @@ if (isset($_POST['vegetable'])) {
 if (isset($_POST['plot_number'])) {
     $plot_id = $_POST['plot_number'];
 }
-//check if Vegetable is in the plot
-$query = "SELECT * FROM vegetable WHERE type_of_vegetable = '$vegetable_name' AND plot = '$plot_id' AND user_id='" .$_SESSION['user_id']."'";
+$count = 0;
+//check how many Vegetable is in the plot
+$query = "SELECT COUNT(type_of_vegetable) FROM vegetable WHERE plot='$plot_id' AND user_id='" .$_SESSION['user_id']."'";
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
-$row = mysqli_fetch_array($result);
-if ($row == null) {
+while ($row = mysqli_fetch_array($result)) {
+    $count = $row[0];
+}
+
+if ($count < 5) {
     //Link vegetables to its images
     if ($vegetable_name == "Potato") {
         $rint = rand(1,2);
@@ -41,7 +45,7 @@ if ($row == null) {
         </head>
         <body>
 
-        <div style='color: green; font-size: 20px; margin-left: 475px;'><?php echo 'Vegetable ' . $vegetable_name . ' in plot ' . $plot_id . ' is added successfully' ?></div>
+            <div style='color: green; font-size: 20px; margin-left: 475px;'><?php echo 'Vegetable ' . $vegetable_name . ' in plot ' . $plot_id . ' is added successfully' ?></div>
         <li><a href='home.php'>Back to Home</a></li>
         <br>
         <li><a href='crops.php'>Add New Crops</a></li>
@@ -50,7 +54,7 @@ if ($row == null) {
     } else {
         ?>       
         <form method="POST" action="home.php">
-        <div style='color: red; font-size: 25px; margin-left: 475px;'>Vegetable already exist in plot <?php echo $plot_id ?></div>
+        <div style='color: red; font-size: 25px; margin-left: 475px;'>Plot is already filled with 5 Vegetables</div>
         <li><a href='home.php'>Back to Home</a></li>
         <br>
         <li><a href='crops.php'>Add New Crops</a></li>

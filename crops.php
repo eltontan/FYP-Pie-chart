@@ -144,50 +144,20 @@ include 'dbFunctions.php';
             border-radius: 12px;
 }
         </style>
-           <script>
-            $(document).ready(function () {
-                $(".buttonSave").click(function () {
-                    
-                    $.ajax({
-                        type: "GET",
-                        url: "http://localhost/C273_L08Ajax/getStudentsByModule.php",
-                        data: "module_code=" + moduleCode,
-                        cache: false,
-                        dataType: "JSON",
-                        success: function (response) {
-                            var message = "<tr><th>Student ID</th><th>Class</th><th>First Name</th><th>Last Name</th></tr>";
-                            for (i = 0; i < response.length; i++) {
-                                message += "<tr><td>" + response[i].student_id + "</td>"
-                                        + "<td>" + response[i].class + "</td>"
-                                        + "<td>" + response[i].first_name + "</td>"
-                                        + "<td>" + response[i].last_name + "</td></tr>";
-                            }
-                            $("#studentTable").html(message);
-                        },
-                        error: function (obj, textStatus, errorThrown) {
-                            console.log("Error " + textStatus + ": " + errorThrown);
-                        }
-                    });
-                });
-            });
-
-
-
-        </script>
-
     </head>
     <body>
         <?php //form is to send user input?>
-         <div class="container-fluid"> 
+        <div class="container-fluid" style="overflow-y:scroll;">
         <form action="doCrop.php" method="post">
-            <div class="container">
-                <div class="row"> 
-                   <div style="font-size: 25px;"class="col pink"><a href="home.php"><i class="fa fa-home"></i>Home</div>
-                  <div style="font-size: 25px;"class="col pink"><a href="crops.php"><i class="fa fa-plus"></i>Add new crops</div> 
-                  <div style="font-size: 25px;"class="col pink"><a href="history.php"><i class="fa fa-history"></i>History</div> 
-                  <div style="font-size: 25px;"class="col pink"><a href="Disease.php"><i class="fas fa-syringe"></i>Disease</a></div> 
-                </div> 
-            </div>
+                <div style="width: 100%; margin-left: auto; margin-right: auto; text-align: center">
+                        <div class="row"> 
+                            <div style="font-size: 25px;"class="col pink"><a href="home.php"><i class="fa fa-home"></i>Home</div>
+                            <div style="font-size: 25px;"class="col pink"><a href="crops.php"><i class="fa fa-plus"></i>Add new crops</div> 
+                            <div style="font-size: 25px;"class="col pink"><a href="history.php"><i class="fa fa-history"></i>History</div> 
+                            <div style="font-size: 25px;"class="col pink"><a href="Disease.php"><i class="fas fa-syringe"></i>Disease</a></div>
+                        </div>
+                        <div style="float: right; margin-top: 10px;"><a style="float: right;" href='logout.php' /><b>Log Out</b></a></div>
+                    </div>
             </br>
             <div class="form-group">
                 Enter Vegetable type :

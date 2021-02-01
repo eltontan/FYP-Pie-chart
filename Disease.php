@@ -46,52 +46,38 @@ and open the template in the editor.
     </head>
     <body>
          <div class="container-fluid"> 
-        <form action="home.php" method="post">
+       
         <div class="container">
                 <div class="row"> 
-                   <div style="font-size: 25px;"class="col pink"><a href="home.php"><i class="fa fa-home"></i>Home</div>
-                  <div style="font-size: 25px;"class="col pink"><a href="crops.php"><i class="fa fa-plus"></i>Add new crops</div> 
-                  <div style="font-size: 25px;"class="col pink"><a href="history.php"><i class="fa fa-history"></i>History</div> 
-                  <div style="font-size: 25px;"class="col pink"><a href="Disease.php"><i class="fas fa-syringe"></i>Disease</a></div>  
+                       <div style="font-size: 25px;"class="col pink"><a href="home.php"><i class="fa fa-home"></i>Home</div>
+                    <div style="font-size: 25px;"class="col pink"><a href="crops.php"><i class="fa fa-plus"></i></button>Add new crops</div> 
+                    <div style="font-size: 25px;"class="col pink"><a href="history.php"><i class="fa fa-history"></i></button>History</div> 
+                    <div style="font-size: 25px;"class="col pink"><a href="Disease.php"><i class="fas fa-syringe"></i></button>Disease</a></div> 
                 </div> 
             </div>
         </br>
         </br>
         <table class ="table">
-    <thead class =" thead-light">
-        <tr>
-            <th>Confidence Level</th>
-            <th>Time Stamp</th>
-            <th>Disease Name</th>
-            <th>Description</th>
-            <th>Prevention</th>
-        </tr>
+   
     </thead>
     <tbody>
-        <tr>
-            <td>80%</td>
-            <td>8:00 AM</td>
-            <td>Powdery Mildew</td>
-            <td>Powdery mildew leaves a telltale white dusty coating on leaves, stems and flowers</td>
-            <td>Give plants good drainage and ample air circulation. Avoid overhead watering at night</td>
-        </tr>
-        <tr>
-            <td>70%</td>
-            <td>9:00 AM</td>
-            <td>Downy Mildew</td>
-            <td>The upper portion of leaves to discolor, while the bottoms develop white or gray mold.</td>
-            <td>The upper portion of leaves to discolor, while the bottoms develop white or gray mold.</td>
-        </tr>
-        <tr>
-            <td>50%</td>
-            <td>10:00 AM</td>
-            <td>Mosaic Virus</td>
-            <td>Some plants exhibit yellowing, stunted growth</td>
-            <td>Remove and destroy infected plants, roots and all, and avoid planting susceptible plants in the same area for two years.</td>
-        </tr>
+        
     </tbody>
     </table>
+        </table>
         
+        <form name="frmSearch" method="post" action="doDisease.php">
+    <label for="idMemberName">Plot :</label>
+    <input id="idMemberName" type="text" name="memberName"/>
+    
+    
+    <input type="submit" value="Search"/><br/>
+</form>
+        <?php
+       
+        ?>
+        
+        </form>
         <?php
   
         ?>
